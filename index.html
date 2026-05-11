@@ -1,40 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NEXORA TECHNOLOGIES | AI • Cybersecurity • Media</title>
+    <title>ANNUR DIGITAL WORLD</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<div class="box">
+    <h1>ANNUR DIGITAL WORLD🧠</h1>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    <div id="chat"></div>
+
+    <input id="input" placeholder="Rubuta sako..." />
+    <button onclick="send()">Send</button>
+</div>
+
+<script src="memory.js"></script>
+<script src="ai.js"></script>
+
+<script>
+function sendAI() {
+
+    let input = document.getElementById("userInput").value;
+
+    let chat = document.getElementById("chat");
+
+    chat.innerHTML += "<p><b>You:</b> " + input + "</p>";
+
+    let reply = "Ban gane ba.";
+
+    if(input.includes("suna")) {
+        reply = "Ni ANNUR AI ne 🤖";
     }
 
-    html {
-      scroll-behavior: smooth;
+    if(input.includes("hello")) {
+        reply = "Sannu 👋";
     }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #050816;
-      color: white;
-      overflow-x: hidden;
+    if(input.includes("kudi")) {
+        reply = "Zan taimaka maka da kasuwanci 💰";
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+    chat.innerHTML += "<p><b>AI:</b> " + reply + "</p>";
 
-    .container {
-      width: 90%;
-      max-width: 1300px;
+    localStorage.setItem("lastMessage", input);
+}
+</script>
+
+<div id="ai-box" style="position:fixed;bottom:20px;left:20px;background:#1e1e1e;padding:15px;border-radius:10px;width:300px;">
+    <h3>ANNUR AI 🤖</h3>
+
+    <div id="chat" style="height:200px;overflow:auto;background:#000;padding:10px;margin-bottom:10px;"></div>
+
+    <input id="userInput" placeholder="Rubuta sako..." style="width:70%;padding:10px;">
+    
+    <button onclick="sendAI()" style="padding:10px;background:gold;border:none;">
+        Send
+    </button>
+</div>
+</body>
+</html>      max-width: 1300px;
       margin: auto;
     }
 
