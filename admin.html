@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ha">
+<head>
+    <meta charset="UTF-8">
+    <title>ANNUR ADMIN | Control Panel</title>
+    <style>
+        body { font-family: sans-serif; background: #121212; color: #fff; padding: 20px; }
+        .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .card { background: #1e1e1e; padding: 20px; border-radius: 10px; border-left: 5px solid #f1c40f; }
+        .card h3 { color: #f1c40f; margin-top: 0; }
+        .btn-withdraw { background: #27ae60; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; }
+        .log-box { background: #000; color: #0f0; padding: 15px; font-family: monospace; height: 150px; overflow-y: scroll; margin-top: 10px; border: 1px solid #333; }
+        .alert { color: #e74c3c; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h1>Barka da Dawo, Engr. Nura!</h1>
+    <p>Gudanarwar ANNUR INTERNET SOLUTION & MEDIA TV</p>
+
+    <div class="dashboard-grid">
+        <div class="card">
+            <h3>Asusunka (Total Revenue)</h3>
+            <p style="font-size: 24px;">₦4,750,000.00</p>
+            <button class="btn-withdraw" onclick="withdraw()">Cire Kudi (Withdraw)</button>
+        </div>
+
+        <div class="card">
+            <h3>ANNUR-SENTINEL Status</h3>
+            <p>Halin Tsaro: <span style="color: #27ae60;">Lafiya Lau ✅</span></p>
+            <div class="log-box" id="securityLogs">
+                [18:10:05] Suna: ANNUR-SENTINEL Kunne...<br>
+                [18:10:15] An toshe wani hari daga IP: 192.168.1.105 (Russia)<br>
+                [18:10:20] An kwaso hoton maharin (Hacker Photo Captured)<br>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>ANNUR MEDIA TV</h3>
+            <p>Bidiyoyin da aka dora: 42</p>
+            <p>Yarukan da ake yada labarai: 100+</p>
+            <button onclick="window.location.href='#'" style="background:#2980b9; color:white; border:none; padding:10px;">Duba Live Stream</button>
+        </div>
+    </div>
+
+    <script>
+        function withdraw() {
+            let amount = prompt("Nawa kake so ka cire zuwa bankinka?");
+            if(amount) {
+                alert("Ana sarrafa ₦" + amount + "... Za ka karbi sako ta email dinka (annurvip@gmail.com) nan take.");
+            }
+        }
+
+        // Simulating Live Security Logs
+        setInterval(() => {
+            const logs = document.getElementById('securityLogs');
+            const time = new Date().toLocaleTimeString();
+            logs.innerHTML += `[${time}] Checking global threads... No new threats.<br>`;
+            logs.scrollTop = logs.scrollHeight;
+        }, 5000);
+    </script>
+
+</body>
+</html>

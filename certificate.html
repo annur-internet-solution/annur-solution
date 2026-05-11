@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANNUR - Professional Certificate Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Old+Standard+TT:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body { background: #121212; color: white; font-family: 'Segoe UI', sans-serif; text-align: center; padding: 20px; }
+        .no-print-area { background: #1e1e1e; padding: 25px; border-radius: 15px; margin-bottom: 30px; border: 2px solid #d4af37; display: inline-block; }
+        input { padding: 12px; font-size: 18px; border-radius: 5px; border: 1px solid #d4af37; width: 320px; background: #000; color: #fff; text-transform: uppercase; }
+        .gen-btn { padding: 12px 25px; font-size: 18px; background: linear-gradient(45deg, #d4af37, #f1c40f); border: none; cursor: pointer; font-weight: bold; border-radius: 5px; color: #000; transition: 0.3s; }
+        .gen-btn:hover { transform: scale(1.05); }
+        
+        /* Main Certificate Design */
+        #certificate-area {
+            width: 950px; height: 680px; padding: 45px; background: #ffffff; color: #1a1a1a;
+            margin: 0 auto; border: 25px solid #1a1a1a; position: relative;
+            display: none; box-shadow: 0 0 50px rgba(0,0,0,0.8);
+            background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+            outline: 5px solid #d4af37; outline-offset: -18px;
+        }
+
+        .logo-img { width: 115px; margin-bottom: 5px; }
+        h1 { font-size: 65px; margin: 5px 0; font-family: 'Old Standard TT', serif; color: #1a1a1a; text-transform: uppercase; letter-spacing: 3px; }
+        .sub-header { font-size: 16px; font-weight: 700; color: #d4af37; letter-spacing: 6px; margin-bottom: 15px; }
+        
+        /* Professional Name Style */
+        #display-name { 
+            font-size: 52px; 
+            font-weight: 700; 
+            color: #1a1a1a; 
+            display: block; 
+            margin: 15px 0; 
+            font-family: 'Cinzel', serif; 
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-bottom: 4px double #d4af37; 
+            display: inline-block; 
+            min-width: 550px;
+            padding-bottom: 5px;
+        }
+
+        .main-text { font-size: 21px; line-height: 1.6; margin: 25px 0; color: #333; }
+        .bold-gold { color: #b8860b; font-weight: bold; }
+
+        .footer-line { display: flex; justify-content: space-between; margin-top: 35px; padding: 0 60px; align-items: flex-end; }
+        .signature-block { width: 260px; text-align: center; }
+        
+        /* Real Signature Image */
+        .sig-img { height: 90px; width: auto; margin-bottom: -20px; display: block; margin-left: auto; margin-right: auto; position: relative; z-index: 2; }
+        .sig-line { border-top: 2px solid #1a1a1a; width: 100%; padding-top: 10px; font-size: 15px; position: relative; z-index: 1; }
+
+        .org-footer { font-size: 13px; font-weight: bold; color: #777; margin-top: 25px; letter-spacing: 1px; }
+
+        @media print {
+            .no-print-area, .print-btn { display: none; }
+            body { background: white; padding: 0; }
+            #certificate-area { display: block !important; box-shadow: none; margin: 0; border: 15px solid #1a1a1a; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="no-print-area">
+        <h3 style="color:#d4af37; margin-top:0;">ANNUR CERTIFICATE GENERATOR</h3>
+        <p>Type Student Name (Professional Version):</p>
+        <input type="text" id="user-name" placeholder="E.G. MUJAHID JILANI ISHAQ">
+        <button class="gen-btn" onclick="generateCert()">Generate Certificate</button>
+    </div>
+
+    <div id="certificate-area">
+        <img src="20260506_103347.png" class="logo-img" alt="ANNUR Logo">
+        
+        <div class="sub-header">CERTIFICATE OF COMPLETION</div>
+        <h1>CERTIFICATE</h1>
+        <p style="font-size: 19px; font-weight: bold; margin: 0; color: #555;">This credential is officially presented to</p>
+        
+        <span id="display-name"></span>
+
+        <div class="main-text">
+            For outstanding commitment and successful completion of the specialized course in <br>
+            <span class="bold-gold">CYBERSECURITY, DIGITAL LITERACY & ICT SOLUTIONS</span> <br>
+            authorized by the Board of Directors at <span class="bold-gold">ANNUR INTERNET SOLUTION LTD</span>.
+        </div>
+
+        <div class="org-footer">
+            ANNUR INTERNET SOLUTION | LIVE INSIDE THE WORLD | ANNUR MEDIA TV
+        </div>
+
+        <div class="footer-line">
+            <div class="signature-block">
+                <div class="sig-line">
+                    <strong>May 11, 2026</strong><br>
+                    <small>Date of Issue</small>
+                </div>
+            </div>
+            
+            <div class="signature-block">
+                <img src="BackgroundEraser_20260511_002645448.png" class="sig-img" alt="CEO Signature">
+                <div class="sig-line">
+                    <strong>Engr. Nura L. Sulaiman</strong><br>
+                    <small>Chief Executive Officer (CEO)</small>
+                </div>
+            </div>
+        </div>
+        
+        <p style="margin-top: 30px; font-size: 10px; color: #bbb; font-family: sans-serif;">Verify Authenticity: www.annur-solution.com.ng/verify</p>
+        
+        <br>
+        <button class="print-btn" onclick="window.print()" style="background: #1a1a1a; color: #d4af37; border: 1px solid #d4af37; padding: 10px 20px; cursor: pointer; font-weight: bold; border-radius: 5px;">Print / Save as PDF</button>
+    </div>
+
+    <script>
+        function generateCert() {
+            var name = document.getElementById('user-name').value;
+            if (name.trim() === "") {
+                alert("Please enter the student's name!");
+            } else {
+                document.getElementById('display-name').innerText = name.toUpperCase();
+                document.getElementById('certificate-area').style.display = "block";
+                window.scrollTo(0, document.body.scrollHeight);
+            }
+        }
+    </script>
+
+</body>
+</html>
