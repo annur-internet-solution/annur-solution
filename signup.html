@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Signup</title>
+
+<style>
+
+body{
+background:#050816;
+color:white;
+font-family:sans-serif;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.box{
+background:#11182d;
+padding:40px;
+border-radius:20px;
+width:320px;
+}
+
+input{
+width:100%;
+padding:12px;
+margin-top:15px;
+border:none;
+border-radius:10px;
+background:#0b1220;
+color:white;
+}
+
+button{
+width:100%;
+padding:12px;
+margin-top:20px;
+background:gold;
+border:none;
+border-radius:10px;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="box">
+
+<h2>Create Account</h2>
+
+<input id="name" placeholder="Full Name">
+
+<input id="email" placeholder="Email">
+
+<input id="password" type="password" placeholder="Password">
+
+<button onclick="signup()">
+Create Account
+</button>
+
+<p style="margin-top:20px;">
+Already have account?
+
+<a href="login.html" style="color:gold;">
+Login
+</a>
+</p>
+
+</div>
+
+<script src="auth.js"></script>
+
+</body>
+</html>
