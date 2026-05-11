@@ -2399,6 +2399,89 @@ Ask AI
 </button>
 
   </div>
+  area.innerHTML = `
+<div style="padding:30px;">
+
+<h2 style="color:gold;">
+🎮 ANNUR GAME REALM
+</h2>
+
+<p>Complete mission:</p>
+
+<input
+id="gameAnswer"
+placeholder="Type answer..."
+style="
+padding:12px;
+width:100%;
+background:#11182d;
+color:white;
+border:none;
+border-radius:10px;
+"
+/>
+
+<button
+onclick="checkMission()"
+style="
+margin-top:15px;
+padding:12px;
+background:gold;
+border:none;
+border-radius:10px;
+">
+Submit
+</button>
+
+<p id="gameResult"></p>
+
+</div>
+`;<script>
+
+function checkMission() {
+
+    let ans =
+    document.getElementById("gameAnswer").value;
+
+    let result =
+    document.getElementById("gameResult");
+
+    if(ans === "NEXORA123") {
+
+        result.innerHTML =
+        "✅ Mission Complete";
+
+    } else {
+
+        result.innerHTML =
+        "❌ Wrong";
+    }
+}
+
+</script>
+  <script>
+
+function checkMission() {
+
+    let ans =
+    document.getElementById("gameAnswer").value;
+
+    let result =
+    document.getElementById("gameResult");
+
+    if(ans === "NEXORA123") {
+
+        result.innerHTML =
+        "✅ Mission Complete";
+
+    } else {
+
+        result.innerHTML =
+        "❌ Wrong";
+    }
+}
+
+  </script>
 
 </body>
 </html>
